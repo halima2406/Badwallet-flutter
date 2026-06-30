@@ -1,29 +1,27 @@
 import 'package:flutter/material.dart';
 
-/// Palette de couleurs de l'application BadWallet.
-/// Reprend la charte du tableau de bord Angular (thème « emerald »).
+// les couleurs de l'appli (les memes que mon projet Angular, vert emeraude)
 class AppColors {
   AppColors._();
 
-  // Couleur principale (vert émeraude — identité BadWallet).
+  // couleur principale
   static const Color primary = Color(0xFF10B981);
   static const Color primaryDark = Color(0xFF059669);
   static const Color primaryLight = Color(0xFF34D399);
 
-  /// Texte foncé posé sur les surfaces vives (dégradé, boutons).
+  // texte fonce posé sur le vert
   static const Color onAccent = Color(0xFF04261F);
 
-  // Dégradé de la carte solde / du logo (identique à --bw-gradient).
+  // degrade de la carte du solde et du logo
   static const List<Color> balanceGradient = [
     Color(0xFF34D399),
     Color(0xFF10B981),
   ];
 
-  // Sémantique financière.
-  static const Color credit = Color(0xFF059669); // entrées (vert)
-  static const Color debit = Color(0xFFF43F5E); // sorties (rouge/rose)
+  static const Color credit = Color(0xFF059669); // entrees (vert)
+  static const Color debit = Color(0xFFF43F5E); // sorties (rouge)
 
-  // Neutres.
+  // couleurs neutres
   static const Color background = Color(0xFFF4F7F6);
   static const Color surface = Color(0xFFFFFFFF);
   static const Color textPrimary = Color(0xFF0F1A17);

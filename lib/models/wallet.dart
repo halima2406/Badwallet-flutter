@@ -1,6 +1,6 @@
 import '../core/utils/formatters.dart';
 
-/// Portefeuille (GET /api/wallets/{phone}).
+// le portefeuille
 class Wallet {
   final int? id;
   final String phoneNumber;

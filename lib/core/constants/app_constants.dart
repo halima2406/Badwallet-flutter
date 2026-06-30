@@ -1,48 +1,27 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-/// ===========================================================================
-///  CONFIGURATION DU BACKEND (BadWallet API & Payment Service - port 8080)
-/// ===========================================================================
-///
-///  Le backend Spring Boot expose l'API sur http://localhost:8080.
-///  Selon l'endroit où tourne l'application, "localhost" ne pointe PAS au
-///  même endroit :
-///
-///   * Navigateur web (flutter run -d chrome) ......... http://localhost:8080
-///   * Émulateur Android .............................. http://10.0.2.2:8080
-///   * Téléphone Android physique ..................... http://IP-DU-PC:8080
-///                                                       (PC et tél sur le même WiFi)
-///
-///  👉 Pour changer de cible, modifie simplement les deux constantes ci-dessous.
-/// ---------------------------------------------------------------------------
+// Config du backend (API sur le port 8080).
 
-/// IP du PC sur le réseau local (WiFi). À adapter si elle change.
-/// (détectée automatiquement à la génération : `ipconfig getifaddr en0`)
+// IP de mon PC sur le wifi (pour tester sur le téléphone). A changer si besoin.
 const String kPcLanIp = '192.168.1.9';
 
-/// Mets `true` si tu testes sur un ÉMULATEUR Android (utilise 10.0.2.2).
-/// Laisse `false` pour un TÉLÉPHONE physique (utilise l'IP du PC ci-dessus).
+// true = emulateur Android, false = vrai telephone
 const bool kUseAndroidEmulator = false;
 
-/// URL de base calculée automatiquement selon la plateforme.
+// localhost ne pointe pas au meme endroit selon la plateforme
 String get apiBaseUrl {
   if (kIsWeb) return 'http://localhost:8080';
   if (defaultTargetPlatform == TargetPlatform.android) {
     return kUseAndroidEmulator ? 'http://10.0.2.2:8080' : 'http://$kPcLanIp:8080';
   }
-  // iOS simulateur / desktop
   return 'http://localhost:8080';
 }
 
-/// Numéro pré-rempli pour la démo (existe dans le seeder du backend).
+// numero deja rempli pour tester
 const String kDemoPhone = '+221770000003';
 
-/// ===========================================================================
-///  Catalogue des fournisseurs de factures (écran "Payer").
-///  Le backend seede réellement ISM et WOYAFAL ; les autres sont affichés
-///  pour l'UI (ils renverront "aucune facture impayée").
-/// ===========================================================================
+// liste des fournisseurs de factures
 class BillProvider {
   final String serviceName;
   final String label;

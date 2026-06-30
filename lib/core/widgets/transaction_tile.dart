@@ -4,8 +4,7 @@ import '../../models/transaction.dart';
 import '../theme/app_colors.dart';
 import '../utils/formatters.dart';
 
-/// Ligne d'une transaction (utilisée dans le Dashboard et l'Historique).
-/// Code couleur : vert = entrée, rouge = sortie, gris = échouée.
+// une ligne de transaction (vert = entree, rouge = sortie, gris = echouée)
 class TransactionTile extends StatelessWidget {
   final TransactionModel tx;
   const TransactionTile({super.key, required this.tx});

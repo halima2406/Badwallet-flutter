@@ -9,7 +9,7 @@ import '../dashboard/providers/wallet_provider.dart';
 import '../history/presentation/history_screen.dart';
 import '../profile/presentation/profile_screen.dart';
 
-/// Coquille principale avec barre de navigation inférieure.
+// l'ecran principal avec la barre de navigation en bas
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
 

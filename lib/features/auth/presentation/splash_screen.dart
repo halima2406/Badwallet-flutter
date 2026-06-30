@@ -6,8 +6,7 @@ import '../../main_shell/main_shell.dart';
 import '../providers/auth_provider.dart';
 import 'login_screen.dart';
 
-/// Écran de démarrage avec le logo BadWallet.
-/// Restaure la session puis redirige vers le bon écran.
+// premier ecran avec le logo, puis on redirige vers login ou accueil
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 

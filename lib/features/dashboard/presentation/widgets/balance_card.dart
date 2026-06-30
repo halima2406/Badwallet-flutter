@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/utils/formatters.dart';
 
-/// Carte affichant le solde en grand, masquable via l'icône œil.
+// la carte qui montre le solde (cachable avec l'oeil)
 class BalanceCard extends StatelessWidget {
   final double balance;
   final String currency;

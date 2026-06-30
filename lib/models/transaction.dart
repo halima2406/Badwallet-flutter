@@ -1,9 +1,6 @@
 import '../core/utils/formatters.dart';
 
-/// Transaction (GET /api/wallets/{phone}/transactions).
-///
-/// type   ∈ DEPOT, RETRAIT, TRANSFERT_ENVOYE, TRANSFERT_RECU, PAIEMENT_FACTURE
-/// statut ∈ REUSSIE, ECHOUEE
+// une transaction (depot, retrait, transfert, paiement...)
 class TransactionModel {
   final String reference;
   final String type;
@@ -41,13 +38,13 @@ class TransactionModel {
     );
   }
 
-  /// Vrai si l'argent ENTRE dans le portefeuille (dépôt, transfert reçu).
+  // true si l'argent rentre (depot ou transfert recu)
   bool get isCredit => type == 'DEPOT' || type == 'TRANSFERT_RECU';
 
-  /// Vrai si l'opération a échoué.
+  // true si ca a echoué
   bool get isFailed => statut == 'ECHOUEE';
 
-  /// Libellé lisible du type.
+  // texte affiché à l'ecran
   String get typeLabel {
     switch (type) {
       case 'DEPOT':

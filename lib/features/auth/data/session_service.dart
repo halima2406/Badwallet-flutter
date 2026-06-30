@@ -1,7 +1,6 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-/// Sauvegarde locale et sécurisée du numéro de téléphone de l'utilisateur
-/// (flutter_secure_storage).
+// enregistre le numero sur le telephone (stockage securisé)
 class SessionService {
   static const _kPhoneKey = 'badwallet_phone';
 

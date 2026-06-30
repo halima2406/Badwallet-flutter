@@ -8,7 +8,7 @@ import '../../auth/presentation/login_screen.dart';
 import '../../auth/providers/auth_provider.dart';
 import '../../dashboard/providers/wallet_provider.dart';
 
-/// Écran profil : infos de la session + déconnexion.
+// ecran profil : infos et bouton deconnexion
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 

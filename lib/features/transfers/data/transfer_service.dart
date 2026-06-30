@@ -1,14 +1,12 @@
 import '../../../core/network/api_client.dart';
 import '../../../models/wallet.dart';
 
-/// Service de transfert d'argent.
+// appelle l'API pour envoyer de l'argent
 class TransferService {
   final ApiClient _api;
   TransferService(this._api);
 
-  /// POST /api/wallets/transfer
-  /// body: { senderPhone, receiverPhone, amount }
-  /// renvoie le portefeuille mis à jour de l'émetteur.
+  // envoie l'argent, renvoie le portefeuille mis a jour
   Future<Wallet> transfer({
     required String senderPhone,
     required String receiverPhone,

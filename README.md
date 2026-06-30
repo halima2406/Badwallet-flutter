@@ -37,7 +37,7 @@ lib/
 │   ├── constants/             # URL de l'API, catalogue fournisseurs
 │   ├── network/               # ApiClient (client HTTP + enveloppe ApiResponse) + exceptions
 │   ├── state/                 # ViewStatus (Loading/Loaded/Error)
-│   ├── theme/                 # Couleurs + thème Material 3 (Poppins)
+│   ├── theme/                 # Couleurs + thème Material 3 (Inter)
 │   ├── utils/                 # Formatage monnaie (XOF) et dates (intl)
 │   └── widgets/               # Widgets réutilisables (logo, vues d'état, tuile transaction)
 ├── models/                    # Wallet, Balance, Transaction, Facture, PaymentReceipt
@@ -79,7 +79,7 @@ lib/
 | `provider` | Gestion d'état et injection des services |
 | `http` | Requêtes vers la BadWallet API |
 | `intl` | Formatage de la monnaie (`50 000 XOF`) et des dates |
-| `google_fonts` | Typographie moderne (Poppins) |
+| `google_fonts` | Typographie (Inter) |
 | `flutter_secure_storage` | Sauvegarde locale du numéro de téléphone |
 | `flutter_launcher_icons` | Icône d'application personnalisée (build APK) |
 

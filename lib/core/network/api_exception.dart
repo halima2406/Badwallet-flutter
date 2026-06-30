@@ -1,5 +1,4 @@
-/// Exception métier/réseau remontée par [ApiClient] avec un message lisible
-/// pour l'utilisateur.
+// erreur renvoyee par l'API avec un message clair
 class ApiException implements Exception {
   final String message;
   final int? statusCode;

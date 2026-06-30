@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
 
-/// Pavé numérique personnalisé (saisie du montant).
+// le clavier des chiffres pour taper le montant
 class NumericKeypad extends StatelessWidget {
   final void Function(String digit) onDigit;
   final VoidCallback onBackspace;

@@ -1,5 +1,4 @@
-/// États possibles d'une requête (gestion d'état "Loading / Loaded / Error"
-/// recommandée par le sujet).
+// les etats d'une requete : rien, en cours, fini, erreur
 enum ViewStatus { idle, loading, loaded, error }
 
 extension ViewStatusX on ViewStatus {

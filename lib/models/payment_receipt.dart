@@ -1,6 +1,6 @@
 import '../core/utils/formatters.dart';
 
-/// Reçu de paiement (POST /api/wallets/pay-factures et /pay).
+// le recu apres un paiement
 class PaymentReceipt {
   final String phoneNumber;
   final String serviceName;

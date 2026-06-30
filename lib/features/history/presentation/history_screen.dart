@@ -10,7 +10,7 @@ import '../../dashboard/providers/wallet_provider.dart';
 
 enum _Filter { tout, entrees, sorties }
 
-/// Écran Historique : toutes les transactions + filtres + codes couleurs.
+// ecran historique : toutes les transactions avec des filtres
 class HistoryScreen extends StatefulWidget {
   const HistoryScreen({super.key});
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
 
-/// Boutons d'actions rapides du dashboard : Transférer, Payer, Historique.
+// les boutons rapides : Transferer, Payer, Historique
 class QuickActions extends StatelessWidget {
   final VoidCallback onTransfer;
   final VoidCallback onPay;

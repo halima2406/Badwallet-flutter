@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import '../data/session_service.dart';
 
-/// Gère la session : numéro de téléphone connecté, persistance locale.
+// gere la connexion : garde le numero de l'utilisateur
 class AuthProvider extends ChangeNotifier {
   final SessionService _session;
   AuthProvider(this._session);
@@ -14,14 +14,14 @@ class AuthProvider extends ChangeNotifier {
   bool get initializing => _initializing;
   bool get isLoggedIn => _phone != null && _phone!.isNotEmpty;
 
-  /// Restaure la session sauvegardée au démarrage.
+  // au demarrage on regarde si un numero est deja enregistré
   Future<void> loadSession() async {
     _phone = await _session.readPhone();
     _initializing = false;
     notifyListeners();
   }
 
-  /// "Connexion" simulée : on mémorise le numéro de téléphone.
+  // connexion : on enregistre juste le numero
   Future<void> login(String phone) async {
     _phone = phone.trim();
     await _session.savePhone(_phone!);

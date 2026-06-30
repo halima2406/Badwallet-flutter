@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
 
-/// Thème global Material 3 + typographie Poppins (google_fonts).
+// le theme de l'appli (Material 3)
 class AppTheme {
   AppTheme._();
 
@@ -18,7 +18,7 @@ class AppTheme {
     );
 
     return base.copyWith(
-      // Police Inter (même typographie que le dashboard Angular).
+      // police Inter (comme mon projet Angular)
       textTheme: GoogleFonts.interTextTheme(base.textTheme).apply(
         bodyColor: AppColors.textPrimary,
         displayColor: AppColors.textPrimary,

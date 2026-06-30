@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../theme/app_colors.dart';
 
-/// Affichage pendant le chargement (état Loading).
+// petit loader (quand ca charge)
 class LoadingView extends StatelessWidget {
   final String? message;
   const LoadingView({super.key, this.message});
@@ -25,7 +25,7 @@ class LoadingView extends StatelessWidget {
   }
 }
 
-/// Affichage d'une erreur avec bouton "Réessayer" (état Error).
+// message d'erreur avec un bouton reessayer
 class ErrorView extends StatelessWidget {
   final String message;
   final VoidCallback? onRetry;
@@ -62,7 +62,7 @@ class ErrorView extends StatelessWidget {
   }
 }
 
-/// Affichage d'un état vide.
+// quand il n'y a rien a afficher
 class EmptyView extends StatelessWidget {
   final IconData icon;
   final String message;

@@ -1,6 +1,6 @@
 import '../core/utils/formatters.dart';
 
-/// Facture impayée (GET /api/external/factures/{code}/current).
+// une facture
 class Facture {
   final String reference;
   final String walletCode;
