@@ -1,4 +1,3 @@
-// erreur renvoyee par l'API avec un message clair
 class ApiException implements Exception {
   final String message;
   final int? statusCode;

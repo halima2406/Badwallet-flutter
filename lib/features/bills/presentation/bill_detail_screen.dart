@@ -12,7 +12,6 @@ import '../../../models/facture.dart';
 import '../../../models/payment_receipt.dart';
 import '../providers/bills_provider.dart';
 
-// detail d'un fournisseur : factures impayees, selection et paiement
 class BillDetailScreen extends StatelessWidget {
   final BillProvider provider;
   const BillDetailScreen({super.key, required this.provider});

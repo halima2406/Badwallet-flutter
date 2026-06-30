@@ -16,7 +16,6 @@ import 'features/transfers/providers/transfer_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // pour avoir les dates en francais
   await initializeDateFormatting('fr_FR', null);
   runApp(const BadWalletApp());
 }
@@ -26,7 +25,6 @@ class BadWalletApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // le client HTTP (Singleton) et les services, qu'on donne aux providers
     final api = ApiClient.instance;
     final walletService = WalletService(api);
     final transferService = TransferService(api);

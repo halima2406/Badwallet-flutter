@@ -13,7 +13,6 @@ import '../providers/wallet_provider.dart';
 import 'widgets/balance_card.dart';
 import 'widgets/quick_actions.dart';
 
-// l'ecran d'accueil
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 

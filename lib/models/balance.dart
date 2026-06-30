@@ -1,6 +1,5 @@
 import '../core/utils/formatters.dart';
 
-// le solde du portefeuille
 class Balance {
   final String phoneNumber;
   final double balance;

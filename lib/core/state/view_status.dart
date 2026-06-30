@@ -1,4 +1,3 @@
-// les etats d'une requete : rien, en cours, fini, erreur
 enum ViewStatus { idle, loading, loaded, error }
 
 extension ViewStatusX on ViewStatus {

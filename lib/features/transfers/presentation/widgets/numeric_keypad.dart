@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
 
-// le clavier des chiffres pour taper le montant
 class NumericKeypad extends StatelessWidget {
   final void Function(String digit) onDigit;
   final VoidCallback onBackspace;

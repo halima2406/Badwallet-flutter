@@ -1,6 +1,5 @@
 import '../core/utils/formatters.dart';
 
-// le recu apres un paiement
 class PaymentReceipt {
   final String phoneNumber;
   final String serviceName;

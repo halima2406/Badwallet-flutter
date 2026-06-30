@@ -7,7 +7,6 @@ import '../../../models/transaction.dart';
 import '../../../models/wallet.dart';
 import '../data/wallet_service.dart';
 
-// gere le solde et les transactions (utilisé par l'accueil et l'historique)
 class WalletProvider extends ChangeNotifier {
   final WalletService _service;
   WalletProvider(this._service);
@@ -22,7 +21,6 @@ class WalletProvider extends ChangeNotifier {
   bool hideBalance = false;
   String? _phone;
 
-  // les 5 dernieres transactions (pour l'accueil)
   List<TransactionModel> get recentTransactions =>
       transactions.take(5).toList();
 

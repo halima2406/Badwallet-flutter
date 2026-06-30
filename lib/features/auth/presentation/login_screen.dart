@@ -8,7 +8,6 @@ import '../../../core/widgets/app_logo.dart';
 import '../../main_shell/main_shell.dart';
 import '../providers/auth_provider.dart';
 
-// ecran de connexion : on tape le numero de telephone
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 

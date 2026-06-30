@@ -7,7 +7,6 @@ import '../../../models/payment_receipt.dart';
 import '../../dashboard/data/wallet_service.dart';
 import '../data/bills_service.dart';
 
-// gere les factures : chargement, selection des cases, paiement
 class BillsProvider extends ChangeNotifier {
   final BillsService _billsService;
   final WalletService _walletService;
@@ -19,14 +18,12 @@ class BillsProvider extends ChangeNotifier {
   String? _walletCode;
   List<Facture> _all = [];
 
-  // les factures cochees
   final Set<String> _selected = {};
 
   ViewStatus payStatus = ViewStatus.idle;
   String? payError;
   PaymentReceipt? lastReceipt;
 
-  // factures impayees d'un fournisseur
   List<Facture> facturesFor(String serviceName) =>
       _all.where((f) => f.serviceName == serviceName && f.isUnpaid).toList();
 
@@ -40,7 +37,6 @@ class BillsProvider extends ChangeNotifier {
       .where((f) => _selected.contains(f.reference))
       .fold(0.0, (sum, f) => sum + f.montant);
 
-  // charge les factures impayees du mois
   Future<void> load(String phone) async {
     status = ViewStatus.loading;
     error = null;
@@ -75,7 +71,6 @@ class BillsProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // paie les factures cochees
   Future<bool> paySelected(String phone, String serviceName) async {
     final refs = _all
         .where((f) =>
@@ -93,7 +88,6 @@ class BillsProvider extends ChangeNotifier {
         serviceName: serviceName,
         references: refs,
       );
-      // on recharge ce qui reste
       if (_walletCode != null) {
         _all = await _billsService.getCurrentFactures(_walletCode!);
       }

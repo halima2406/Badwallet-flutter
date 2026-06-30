@@ -1,6 +1,5 @@
 import '../core/utils/formatters.dart';
 
-// une facture
 class Facture {
   final String reference;
   final String walletCode;
@@ -10,7 +9,7 @@ class Facture {
   final double montant;
   final DateTime? periode;
   final DateTime? dateEcheance;
-  final String statut; // IMPAYEE / PAYEE
+  final String statut;
 
   Facture({
     required this.reference,

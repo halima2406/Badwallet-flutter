@@ -5,7 +5,6 @@ import '../../../core/state/view_status.dart';
 import '../../../models/wallet.dart';
 import '../data/transfer_service.dart';
 
-// gere un transfert d'argent
 class TransferProvider extends ChangeNotifier {
   final TransferService _service;
   TransferProvider(this._service);

@@ -6,7 +6,6 @@ import '../../main_shell/main_shell.dart';
 import '../providers/auth_provider.dart';
 import 'login_screen.dart';
 
-// premier ecran avec le logo, puis on redirige vers login ou accueil
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 

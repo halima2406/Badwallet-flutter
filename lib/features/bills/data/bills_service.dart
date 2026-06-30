@@ -2,12 +2,10 @@ import '../../../core/network/api_client.dart';
 import '../../../models/facture.dart';
 import '../../../models/payment_receipt.dart';
 
-// appelle l'API pour les factures
 class BillsService {
   final ApiClient _api;
   BillsService(this._api);
 
-  // recupere les factures impayees du mois
   Future<List<Facture>> getCurrentFactures(String walletCode,
       {String? unite}) async {
     final data = await _api.get(
@@ -18,7 +16,6 @@ class BillsService {
     return list.map((e) => Facture.fromJson(e as Map<String, dynamic>)).toList();
   }
 
-  // paie une liste de factures
   Future<PaymentReceipt> payFactures({
     required String phoneNumber,
     required String serviceName,

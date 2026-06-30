@@ -1,6 +1,5 @@
 import '../core/utils/formatters.dart';
 
-// une transaction (depot, retrait, transfert, paiement...)
 class TransactionModel {
   final String reference;
   final String type;
@@ -38,13 +37,10 @@ class TransactionModel {
     );
   }
 
-  // true si l'argent rentre (depot ou transfert recu)
   bool get isCredit => type == 'DEPOT' || type == 'TRANSFERT_RECU';
 
-  // true si ca a echoué
   bool get isFailed => statut == 'ECHOUEE';
 
-  // texte affiché à l'ecran
   String get typeLabel {
     switch (type) {
       case 'DEPOT':

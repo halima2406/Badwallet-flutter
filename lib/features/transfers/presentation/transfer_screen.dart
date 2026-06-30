@@ -10,7 +10,6 @@ import '../../dashboard/providers/wallet_provider.dart';
 import '../providers/transfer_provider.dart';
 import 'widgets/numeric_keypad.dart';
 
-// ecran pour envoyer de l'argent
 class TransferScreen extends StatefulWidget {
   const TransferScreen({super.key});
 
@@ -31,7 +30,6 @@ class _TransferScreenState extends State<TransferScreen> {
   void _onDigit(String d) {
     setState(() {
       if (_amount == '0') _amount = '';
-      // pour pas avoir un nombre trop long
       if ((_amount + d).length <= 12) _amount += d;
     });
   }
@@ -77,7 +75,6 @@ class _TransferScreenState extends State<TransferScreen> {
 
     if (!mounted) return;
     if (success) {
-      // on rafraichit le solde de l'accueil
       await context.read<WalletProvider>().refresh();
       if (!mounted) return;
       await _showSuccessSheet(receiver);

@@ -9,7 +9,6 @@ import '../../auth/providers/auth_provider.dart';
 import '../providers/bills_provider.dart';
 import 'bill_detail_screen.dart';
 
-// ecran Payer : la liste des fournisseurs
 class BillsScreen extends StatefulWidget {
   const BillsScreen({super.key});
 

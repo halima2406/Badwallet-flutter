@@ -6,21 +6,16 @@ import 'package:http/http.dart' as http;
 import '../constants/app_constants.dart';
 import 'api_exception.dart';
 
-// Client HTTP partagé par toute l'appli.
-// Il fait les requetes et enleve l'enveloppe { success, message, data } pour
-// renvoyer juste "data". Si erreur -> ApiException.
 class ApiClient {
   final String baseUrl;
   final http.Client _client;
   final Duration timeout;
 
-  // constructeur prive => Singleton
   ApiClient._()
       : baseUrl = apiBaseUrl,
         _client = http.Client(),
         timeout = const Duration(seconds: 15);
 
-  // une seule instance pour toute l'appli
   static final ApiClient instance = ApiClient._();
 
   Map<String, String> get _headers => const {
@@ -69,7 +64,6 @@ class ApiClient {
 
     final ok = res.statusCode >= 200 && res.statusCode < 300;
 
-    // on enleve l'enveloppe pour garder juste data
     if (decoded is Map && decoded.containsKey('success')) {
       if (decoded['success'] == true && ok) {
         return decoded['data'];

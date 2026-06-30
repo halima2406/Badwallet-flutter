@@ -4,7 +4,6 @@ import '../../models/transaction.dart';
 import '../theme/app_colors.dart';
 import '../utils/formatters.dart';
 
-// une ligne de transaction (vert = entree, rouge = sortie, gris = echouée)
 class TransactionTile extends StatelessWidget {
   final TransactionModel tx;
   const TransactionTile({super.key, required this.tx});

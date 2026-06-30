@@ -1,6 +1,5 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-// enregistre le numero sur le telephone (stockage securisé)
 class SessionService {
   static const _kPhoneKey = 'badwallet_phone';
 

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../theme/app_colors.dart';
 
-// le logo : un carré vert avec une icone de portefeuille
 class AppLogo extends StatelessWidget {
   final double size;
   final bool showName;

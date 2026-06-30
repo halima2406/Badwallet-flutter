@@ -1,15 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-// Config du backend (API sur le port 8080).
-
-// IP de mon PC sur le wifi (pour tester sur le téléphone). A changer si besoin.
 const String kPcLanIp = '192.168.1.9';
 
-// true = emulateur Android, false = vrai telephone
 const bool kUseAndroidEmulator = false;
 
-// localhost ne pointe pas au meme endroit selon la plateforme
 String get apiBaseUrl {
   if (kIsWeb) return 'http://localhost:8080';
   if (defaultTargetPlatform == TargetPlatform.android) {
@@ -18,10 +13,8 @@ String get apiBaseUrl {
   return 'http://localhost:8080';
 }
 
-// numero deja rempli pour tester
 const String kDemoPhone = '+221770000003';
 
-// liste des fournisseurs de factures
 class BillProvider {
   final String serviceName;
   final String label;

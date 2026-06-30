@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
 
-// le theme de l'appli (Material 3)
 class AppTheme {
   AppTheme._();
 
@@ -18,7 +17,6 @@ class AppTheme {
     );
 
     return base.copyWith(
-      // police Inter (comme mon projet Angular)
       textTheme: GoogleFonts.interTextTheme(base.textTheme).apply(
         bodyColor: AppColors.textPrimary,
         displayColor: AppColors.textPrimary,
