@@ -13,7 +13,8 @@ compile en un **APK Android** installable.
 
 - **Onboarding / Auth (simulé)** : splash screen avec logo, connexion par numéro de
   téléphone (identifiant d'interrogation de l'API), mémorisé localement avec
-  `flutter_secure_storage`.
+  `flutter_secure_storage`. **Code PIN à 4 chiffres** (créé à la première connexion
+  puis redemandé à chaque ouverture) pour sécuriser l'accès.
 - **Tableau de bord (Home)** : solde affiché en grand et **masquable** (icône œil),
   boutons d'actions rapides (Transférer / Payer / Historique), **5 dernières
   transactions**.

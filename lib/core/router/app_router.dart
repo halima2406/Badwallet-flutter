@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants/app_constants.dart';
 import '../../features/auth/presentation/login_screen.dart';
+import '../../features/auth/presentation/pin_screen.dart';
 import '../../features/auth/presentation/splash_screen.dart';
 import '../../features/bills/presentation/bill_detail_screen.dart';
 import '../../features/bills/presentation/bills_screen.dart';
@@ -14,6 +15,8 @@ class AppRouter {
 
   static const String splash = '/';
   static const String login = '/login';
+  static const String pinSetup = '/pin-setup';
+  static const String pinLock = '/pin-lock';
   static const String home = '/home';
   static const String transfer = '/transfer';
   static const String bills = '/bills';
@@ -26,6 +29,10 @@ class AppRouter {
         return _route(const SplashScreen(), settings);
       case login:
         return _route(const LoginScreen(), settings);
+      case pinSetup:
+        return _route(const PinScreen(setup: true), settings);
+      case pinLock:
+        return _route(const PinScreen(setup: false), settings);
       case home:
         return _route(const MainShell(), settings);
       case transfer:

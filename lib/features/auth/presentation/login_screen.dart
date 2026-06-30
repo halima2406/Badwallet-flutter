@@ -29,9 +29,12 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _submitting = true);
-    await context.read<AuthProvider>().login(_controller.text.trim());
+    final auth = context.read<AuthProvider>();
+    await auth.login(_controller.text.trim());
     if (!mounted) return;
-    Navigator.of(context).pushReplacementNamed(AppRouter.home);
+    Navigator.of(context).pushReplacementNamed(
+      auth.hasPin ? AppRouter.pinLock : AppRouter.pinSetup,
+    );
   }
 
   @override
@@ -51,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   const Center(child: AppLogo(size: 88, showName: true)),
                   const SizedBox(height: 40),
                   const Text(
-                    'Bienvenue 👋',
+                    'Bienvenue',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 24,
@@ -96,15 +99,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           )
                         : const Text('Continuer'),
-                  ),
-                  const SizedBox(height: 16),
-                  const Center(
-                    child: Text(
-                      'Numéro de démo pré-rempli (existe dans le backend).',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: AppColors.textSecondary, fontSize: 12),
-                    ),
                   ),
                 ],
               ),

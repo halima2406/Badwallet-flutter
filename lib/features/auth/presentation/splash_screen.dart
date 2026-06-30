@@ -26,9 +26,15 @@ class _SplashScreenState extends State<SplashScreen> {
       Future.delayed(const Duration(milliseconds: 1600)),
     ]);
     if (!mounted) return;
-    Navigator.of(context).pushReplacementNamed(
-      auth.isLoggedIn ? AppRouter.home : AppRouter.login,
-    );
+    final String target;
+    if (!auth.isLoggedIn) {
+      target = AppRouter.login;
+    } else if (auth.hasPin) {
+      target = AppRouter.pinLock;
+    } else {
+      target = AppRouter.pinSetup;
+    }
+    Navigator.of(context).pushReplacementNamed(target);
   }
 
   @override
