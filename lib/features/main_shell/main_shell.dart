@@ -20,10 +20,10 @@ class _MainShellState extends State<MainShell> {
   int _index = 0;
 
   static const _pages = [
-    DashboardScreen(),
-    HistoryScreen(),
-    BillsScreen(),
-    ProfileScreen(),
+    DashboardScreen(key: PageStorageKey('tab_dashboard')),
+    HistoryScreen(key: PageStorageKey('tab_history')),
+    BillsScreen(key: PageStorageKey('tab_bills')),
+    ProfileScreen(key: PageStorageKey('tab_profile')),
   ];
 
   @override

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 const String kPcLanIp = '192.168.1.9';
 
-const bool kUseAndroidEmulator = false;
+const bool kUseAndroidEmulator = true;
 
 String get apiBaseUrl {
   if (kIsWeb) return 'http://localhost:8080';
