@@ -39,7 +39,9 @@ class DashboardScreen extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 12, color: AppColors.textSecondary)),
                 Text(
-                  auth.phone ?? '',
+                  wallet.wallet?.email ?? auth.phone ?? '',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                       fontSize: 14, fontWeight: FontWeight.w600),
                 ),
