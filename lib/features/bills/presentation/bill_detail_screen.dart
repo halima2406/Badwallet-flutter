@@ -211,7 +211,7 @@ class BillDetailScreen extends StatelessWidget {
                                 width: 22,
                                 height: 22,
                                 child: CircularProgressIndicator(
-                                  color: Colors.white,
+                                  color: AppColors.onAccent,
                                   strokeWidth: 2.5,
                                 ),
                               )

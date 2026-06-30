@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../../core/router/app_router.dart';
 import '../../../core/state/view_status.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/widgets/state_views.dart';
 import '../../auth/providers/auth_provider.dart';
 import '../providers/bills_provider.dart';
-import 'bill_detail_screen.dart';
 
 class BillsScreen extends StatefulWidget {
   const BillsScreen({super.key});
@@ -79,10 +79,9 @@ class _BillsScreenState extends State<BillsScreen> {
                     count: count,
                     onTap: () {
                       bills.clearSelection();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) => BillDetailScreen(provider: p),
-                        ),
+                      Navigator.of(context).pushNamed(
+                        AppRouter.billDetail,
+                        arguments: p,
                       );
                     },
                   );

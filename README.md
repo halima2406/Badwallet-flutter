@@ -36,8 +36,9 @@ lib/
 ├── core/                      # Socle technique partagé
 │   ├── constants/             # URL de l'API, catalogue fournisseurs
 │   ├── network/               # ApiClient (client HTTP + enveloppe ApiResponse) + exceptions
+│   ├── router/                # Routeur centralisé (routes nommées + onGenerateRoute)
 │   ├── state/                 # ViewStatus (Loading/Loaded/Error)
-│   ├── theme/                 # Couleurs + thème Material 3 (Inter)
+│   ├── theme/                 # Couleurs + thème Material 3 sombre (Inter)
 │   ├── utils/                 # Formatage monnaie (XOF) et dates (intl)
 │   └── widgets/               # Widgets réutilisables (logo, vues d'état, tuile transaction)
 ├── models/                    # Wallet, Balance, Transaction, Facture, PaymentReceipt
@@ -61,6 +62,9 @@ lib/
 - **Singleton** : un **unique** `ApiClient` est partagé par tous les services.
 - **Ouvert/fermé (OCP)** : ajouter un fournisseur de factures = ajouter une entrée
   dans `kBillProviders` (aucun autre code à modifier).
+- **Routing centralisé** : toute la navigation passe par `AppRouter` (routes
+  nommées + `onGenerateRoute`), branché dans `MaterialApp` via `initialRoute` et
+  `onGenerateRoute`.
 
 ### Gestion d'état
 

@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../../core/router/app_router.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/widgets/app_logo.dart';
-import '../../main_shell/main_shell.dart';
 import '../providers/auth_provider.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -31,9 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() => _submitting = true);
     await context.read<AuthProvider>().login(_controller.text.trim());
     if (!mounted) return;
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => const MainShell()),
-    );
+    Navigator.of(context).pushReplacementNamed(AppRouter.home);
   }
 
   @override
@@ -93,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             width: 22,
                             height: 22,
                             child: CircularProgressIndicator(
-                              color: Colors.white,
+                              color: AppColors.onAccent,
                               strokeWidth: 2.5,
                             ),
                           )

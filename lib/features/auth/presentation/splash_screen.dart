@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/router/app_router.dart';
 import '../../../core/theme/app_colors.dart';
-import '../../main_shell/main_shell.dart';
 import '../providers/auth_provider.dart';
-import 'login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -27,74 +26,74 @@ class _SplashScreenState extends State<SplashScreen> {
       Future.delayed(const Duration(milliseconds: 1600)),
     ]);
     if (!mounted) return;
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (_) =>
-            auth.isLoggedIn ? const MainShell() : const LoginScreen(),
-      ),
+    Navigator.of(context).pushReplacementNamed(
+      auth.isLoggedIn ? AppRouter.home : AppRouter.login,
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: AppColors.primary,
+    return Scaffold(
+      backgroundColor: AppColors.background,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _WhiteLogo(),
-            SizedBox(height: 20),
-            Text(
+            Container(
+              width: 96,
+              height: 96,
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: AppColors.buttonGradient,
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(28),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.primary.withValues(alpha: 0.4),
+                    blurRadius: 28,
+                    offset: const Offset(0, 12),
+                  ),
+                ],
+              ),
+              child: const Icon(
+                Icons.account_balance_wallet_rounded,
+                color: AppColors.onAccent,
+                size: 52,
+              ),
+            ),
+            const SizedBox(height: 22),
+            const Text(
               'BadWallet',
               style: TextStyle(
-                color: Colors.white,
+                color: AppColors.textPrimary,
                 fontSize: 30,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 0.5,
+                fontWeight: FontWeight.w800,
+                letterSpacing: -0.5,
               ),
             ),
-            SizedBox(height: 6),
-            Text(
-              'XOF · Dakar',
+            const SizedBox(height: 6),
+            const Text(
+              'XOF · DAKAR',
               style: TextStyle(
-                color: Colors.white70,
+                color: AppColors.textSecondary,
                 fontSize: 13,
-                letterSpacing: 1.5,
+                letterSpacing: 2,
+                fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 40),
-            SizedBox(
+            const SizedBox(height: 40),
+            const SizedBox(
               width: 26,
               height: 26,
               child: CircularProgressIndicator(
-                color: Colors.white,
+                color: AppColors.primary,
                 strokeWidth: 2.6,
               ),
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class _WhiteLogo extends StatelessWidget {
-  const _WhiteLogo();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 96,
-      height: 96,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(28),
-      ),
-      child: const Icon(
-        Icons.account_balance_wallet_rounded,
-        color: AppColors.primary,
-        size: 52,
       ),
     );
   }

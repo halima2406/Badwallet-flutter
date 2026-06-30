@@ -245,7 +245,7 @@ class _TransferScreenState extends State<TransferScreen> {
                         width: 22,
                         height: 22,
                         child: CircularProgressIndicator(
-                          color: Colors.white,
+                          color: AppColors.onAccent,
                           strokeWidth: 2.5,
                         ),
                       )

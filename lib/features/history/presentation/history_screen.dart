@@ -107,7 +107,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
         child: Text(
           label,
           style: TextStyle(
-            color: selected ? Colors.white : AppColors.textPrimary,
+            color: selected ? AppColors.onAccent : AppColors.textPrimary,
             fontWeight: FontWeight.w600,
             fontSize: 13,
           ),

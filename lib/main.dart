@@ -3,9 +3,9 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:provider/provider.dart';
 
 import 'core/network/api_client.dart';
+import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'features/auth/data/session_service.dart';
-import 'features/auth/presentation/splash_screen.dart';
 import 'features/auth/providers/auth_provider.dart';
 import 'features/bills/data/bills_service.dart';
 import 'features/bills/providers/bills_provider.dart';
@@ -43,8 +43,9 @@ class BadWalletApp extends StatelessWidget {
       child: MaterialApp(
         title: 'BadWallet',
         debugShowCheckedModeBanner: false,
-        theme: AppTheme.light,
-        home: const SplashScreen(),
+        theme: AppTheme.dark,
+        initialRoute: AppRouter.splash,
+        onGenerateRoute: AppRouter.onGenerateRoute,
       ),
     );
   }

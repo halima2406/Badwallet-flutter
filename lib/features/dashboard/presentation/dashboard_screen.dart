@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/router/app_router.dart';
 import '../../../core/state/view_status.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/widgets/state_views.dart';
 import '../../../core/widgets/transaction_tile.dart';
 import '../../auth/providers/auth_provider.dart';
-import '../../bills/presentation/bills_screen.dart';
-import '../../history/presentation/history_screen.dart';
-import '../../transfers/presentation/transfer_screen.dart';
 import '../providers/wallet_provider.dart';
 import 'widgets/balance_card.dart';
 import 'widgets/quick_actions.dart';
@@ -80,18 +78,13 @@ class DashboardScreen extends StatelessWidget {
               const SizedBox(height: 20),
               QuickActions(
                 onTransfer: () async {
-                  await Navigator.of(context).push(
-                    MaterialPageRoute(
-                        builder: (_) => const TransferScreen()),
-                  );
+                  await Navigator.of(context).pushNamed(AppRouter.transfer);
                   await wallet.refresh();
                 },
-                onPay: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const BillsScreen()),
-                ),
-                onHistory: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const HistoryScreen()),
-                ),
+                onPay: () =>
+                    Navigator.of(context).pushNamed(AppRouter.bills),
+                onHistory: () =>
+                    Navigator.of(context).pushNamed(AppRouter.history),
               ),
               const SizedBox(height: 26),
               Row(
@@ -103,10 +96,8 @@ class DashboardScreen extends StatelessWidget {
                   ),
                   const Spacer(),
                   TextButton(
-                    onPressed: () => Navigator.of(context).push(
-                      MaterialPageRoute(
-                          builder: (_) => const HistoryScreen()),
-                    ),
+                    onPressed: () =>
+                        Navigator.of(context).pushNamed(AppRouter.history),
                     child: const Text('Voir tout'),
                   ),
                 ],
